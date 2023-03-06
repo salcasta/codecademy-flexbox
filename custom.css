@@ -716,7 +716,7 @@ h1, h2 {
 } */
 
 
-Nested Flexboxes
+/* Nested Flexboxes
 
 1. Inside the .main ruleset, add a display property with a value of flex.
 
@@ -771,4 +771,146 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
+} */
+
+
+Review: Flexbox
+
+1. All of the images are inside of three column divs and the three column divs are all inside of one large div called .cards.
+
+Inside the .cards ruleset, add a display property with a value of flex.
+
+2. Now, inside the .cards ruleset, set the flex-wrap property to have a value of wrap.
+
+3. Inside the .cards ruleset, set the justify-content property to have a value of space-around.
+
+4. In the .col ruleset, set the display property to have a value of inline-flex.
+
+5. In the .col ruleset, set the flex-direction property to have a value of column.
+
+6. In the .col ruleset, set the justify-content property to have a value of space-between.
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Libre Baskerville', sans-serif;
+}
+
+img {
+  margin: 10px auto;
+  height: auto;
+  width: auto;
+}
+
+ul {
+  text-align: right;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+/*Sizing*/
+
+.container {
+  margin: 0 auto;
+}
+
+.spacer {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.main {
+    background-color: #ffc200;
+}
+
+/*Header Section*/
+
+.header {
+  padding: 30px 0px 40px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.header li {
+  list-style: none;
+  display: inline-block;
+}
+
+.header li a {
+  color: #333;
+  margin:0;
+  border:0px;
+}
+
+/*Jumbotron Section*/
+
+.jumbotron {
+  background-color: #fff;
+  max-width: 1200px;
+  margin-left: 50px;
+}
+
+.jumbotron h2 {
+  font-size: 50px;
+  margin-bottom: 70px;
+}
+
+.jumbotron h2 span {
+  color:#ffc200;
+}
+
+.jumbotron p {
+  text-shadow: 0 0;
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 0;
+}
+
+/*Banner Section*/
+.banner {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+/*Expertise Section*/
+.cards {
+  background-color: #ffc200;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.col {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#expertise {
+  padding: 20px;
+  background-color: #ffc200;
+  margin: 0;
+  text-align: center;
+}
+
+/*Footer Section*/
+.footer {
+  padding: 60px 0px;
+  background-color: #000;
+  color: #fff;
+}
+
+.footer h3 {
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+.footer p {
+  font-size:12px;
+  margin-bottom: 0;
+  margin-left: 20px;
 }
