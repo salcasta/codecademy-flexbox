@@ -1,0 +1,107 @@
+/* Creating a Grid
+
+1. To start, look at index.html to see all seven items in the grid. The grid container is of class grid.
+
+Back in style.css, in the ruleset for elements that have the class grid, set the display property to grid.
+
+Right now, we haven’t specified the number of rows or columns in our grid, so every item is sitting on a new row. We’ll learn how to structure grid rows and columns in the next couple of exercises.
+
+.grid {
+  display: grid;
+  border: 2px blue solid;
+  width: 400px;
+  height: 500px;
+}
+
+.box {
+  background-color: beige;
+  color: black;
+  border-radius: 5px;
+  border: 2px dodgerblue solid;
+} */
+
+
+/* Creating Columns
+
+1. In style.css, inside the .grid ruleset, use the grid-template-columns property to create three columns. Set the first column to be 100px wide, the second to be 50% of the grid, and the third to be 200px wide.
+
+Notice that this causes our grid items to go outside the boundaries of the grid. We’ll learn how to fix this soon!
+
+.grid {
+  border: 2px blue solid;
+  width: 400px;
+  height: 500px;
+  display: grid;
+  grid-template-columns: 100px 50% 200px;
+}
+
+.box {
+  background-color: beige;
+  color: black;
+  border-radius: 5px;
+  border: 2px dodgerblue solid;
+} */
+
+
+/* Creating Rows
+
+1. By default, the rows are sized to fit evenly inside the grid. Let’s manually change the size of our rows.
+
+In style.css, inside the .grid ruleset, use grid-template-rows to set the first row to be 40% of the grid’s height. Set the second row to be 50% of the grid’s height. And set the third row to be 50px.
+
+.grid {
+  display: grid;
+  border: 2px blue solid;
+  width: 400px;
+  height: 500px;
+  grid-template-columns: 100px 50% 200px;
+  grid-template-rows: 40% 50% 50px;
+}
+
+.box {
+  background-color: beige;
+  color: black;
+  border-radius: 5px;
+  border: 2px dodgerblue solid;
+} */
+
+/* Grid Template
+
+1. Refactor the grid template rows and columns code inside the .grid ruleset using the grid-template property. Keep the rows and columns looking the same without using the grid-template-rows and grid-template-columns properties!
+
+.grid {
+  display: grid;
+  border: 2px blue solid;
+  width: 400px;
+  height: 500px;
+  grid-template: 40% 50% 50px / 100px 50% 200px;
+}
+
+.box {
+  background-color: beige;
+  color: black;
+  border-radius: 5px;
+  border: 2px dodgerblue solid;
+} */
+
+
+Fraction
+
+1. Change your rows so that each row will take up the exact same fraction of the available space.
+
+2. Change the grid so the middle column is still 50% of the grid, but the first column takes up three fourths of the remaining space and the last column takes up one fourth.
+
+.grid {
+  display: grid;
+  border: 2px blue solid;
+  width: 400px;
+  height: 500px;
+  grid-template: 1fr 1fr 1fr / 3fr 50% 1fr;
+}
+
+.box {
+  background-color: beige;
+  color: black;
+  border-radius: 5px;
+  border: 2px dodgerblue solid;
+}
