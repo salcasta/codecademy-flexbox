@@ -85,7 +85,7 @@ In style.css, inside the .grid ruleset, use grid-template-rows to set the first 
 } */
 
 
-Fraction
+/* Fraction
 
 1. Change your rows so that each row will take up the exact same fraction of the available space.
 
@@ -104,4 +104,248 @@ Fraction
   color: black;
   border-radius: 5px;
   border: 2px dodgerblue solid;
+} */
+
+
+/* Repeat
+
+1. Refactor the sizing of the rows to use the repeat() function.
+
+.grid {
+  display: grid;
+  border: 2px blue solid;
+  width: 400px;
+  height: 500px;
+  grid-template: repeat(3, 1fr) / 3fr 50% 1fr;
+}
+
+.box {
+  background-color: beige;
+  color: black;
+  border-radius: 5px;
+  border: 2px dodgerblue solid;
+} */
+
+
+/* minmax 
+
+1. To see minmax() in action, we need to first make the grid have a variable width. Delete the width declaration from .grid.
+
+If you resize your browser, you will see the grid change size with the window.
+
+2. Using minmax(), change the second column to be between 50 pixels and 300 pixels.
+
+Try resizing your browser window. What happens to the other columns when the second column reaches the 300 pixel limit?
+
+.grid {
+  display: grid;
+  border: 2px blue solid;
+  height: 500px;
+  grid-template: repeat(3, 1fr) / 3fr minmax(50px, 300px) 1fr;
+}
+
+.box {
+  background-color: beige;
+  color: black;
+  border-radius: 5px;
+  border: 2px dodgerblue solid;
+} */
+
+
+
+/* Grid Gap
+
+1. Use row-gap to create a gap of 20px between the rows of your grid.
+
+2. Use column-gap to create a gap of 5px between the column of your grid.
+
+3. Comment out the row-gap and column-gap declarations. Refactor the two properties into a shorthand gap property.
+
+.grid {
+  display: grid;
+  border: 2px blue solid;
+  height: 500px;
+  grid-template: repeat(3, 1fr) / 3fr minmax(50px, 300px) 1fr;
+  //row-gap: 20px;
+  //column-gap: 5px;
+  gap: 20px 5px;
+}
+
+.box {
+  background-color: beige;
+  color: black;
+  border-radius: 5px;
+  border: 2px dodgerblue solid;
+} */
+
+
+/* Multiple Row Items
+
+1. Take a look at the CSS rule for the class grid. Think about what the grid would look like if it were completely filled. Let’s make this first item take up the fifth and sixth rows of the grid.
+
+In the a ruleset, set grid-row-start so the item begins in the fifth row.
+
+2. Set grid-row-end so the item occupies the fifth and sixth rows.
+
+.grid {
+  display: grid;
+  border: 2px blue solid;
+  height: 500px;
+  width: 500px;
+  grid-template: repeat(4, 1fr 2fr) / repeat(4, 3fr 2fr);
+  gap: 5px;
+}
+
+.a {
+  grid-row-start: 5;
+  grid-row-end: 7;
+}
+
+.box {
+  background-color: beige;
+  color: black;
+  border-radius: 5px;
+  border: 2px dodgerblue solid;
+} */
+
+
+/* Grid Row
+
+1. Refactor your code from the last exercise. Replace grid-row-start and grid-row-end with grid-row. Make sure the item still takes up rows five and six.
+
+.grid {
+  display: grid;
+  border: 2px blue solid;
+  height: 500px;
+  width: 500px;
+  grid-template: repeat(4, 1fr 2fr) / repeat(4, 3fr 2fr);
+  gap: 5px;
+}
+
+.a {
+  grid-row: 5 / 7;
+}
+
+.box {
+  background-color: beige;
+  color: black;
+  border-radius: 5px;
+  border: 2px dodgerblue solid;
+}
+
+Grid Column
+
+1. Let’s add another item to our grid. Navigate to index.html and uncomment the B div.
+
+2. Let’s make box b take up a few rows. Go back to style.css, in the .b ruleset, use grid-row with span to make the item take up rows two through four.
+
+3. Next, make box b take up six columns. In style.css, in the .b ruleset, use grid-column to set its starting column to 2. Use span to make the item take up six columns.
+
+4. Now let’s go back to the box a ruleset. Refactor the grid-column-start and grid-column-end declarations into a shorthand grid-column declaration. The grid item should still start in the first column and span 2 columns using the span keyword.
+
+
+.grid {
+  display: grid;
+  border: 2px blue solid;
+  height: 500px;
+  width:500px;
+  grid-template: repeat(4, 1fr 2fr) / repeat(4, 3fr 2fr);
+  gap: 5px;
+}
+
+.a {
+  grid-row: 5 / 7;
+  grid-column: 1 / span 2;
+}
+
+.b {
+  grid-row: 2 / span 3;
+  grid-column: 2 / span 6;
+}
+
+.box {
+  background-color: beige;
+  color: black;
+  border-radius: 5px;
+  border: 2px dodgerblue solid;
+}
+
+
+Grid Area
+
+1. In index.html uncomment the C <div> on line 10.
+
+2. In style.css, inside the .c ruleset, use grid-area to make the element start at row six and column eight. Then have it take up three rows and one column. Use span for both ending values.
+
+3. Let’s refactor the code for the other two items in the grid. Start with item b. Replace grid-row and grid-column with grid-area. Make sure the item still takes up the same amount of space.
+
+4. Lastly, refactor item a. Replace grid-row and grid-column with grid-area. Again, use span to set the end of the rows and columns.
+
+.grid {
+  display: grid;
+  border: 2px blue solid;
+  height: 500px;
+  width:500px;
+  grid-template: repeat(4, 1fr 2fr) / repeat(4, 3fr 2fr);
+  gap: 5px;
+}
+
+.a {
+  grid-area: 5 / 1 / span 2 / span 2;
+}
+
+.b {  
+  grid-area: 2 / 2 / span 3 / span 6;
+}
+
+.c {
+  grid-area: 6 / 8 / span 3 / span 1;
+}
+
+.box {
+  background-color: beige;
+  color: black;
+  border-radius: 5px;
+  border: 2px dodgerblue solid;
+} */
+
+Review
+
+1. Let’s start by making this bunch of divs into a grid. In style.css, in the .grid ruleset, add a declaration that uses the display property along with the value necessary to make the element a CSS grid.
+
+2. Structure the grid to have four columns — the first two each taking up 25% of the total width, the third column taking up two-thirds of the remaining space, and the last column taking up the last third of the remaining space.
+
+3. Give the grid two rows, both 200px in size.
+
+4. Put a 10px gap in between the rows of the grid and a 15px gap in between the columns of the grid.
+
+5. Using the span keyword, make the box with class a take up the first two columns of the grid.
+
+6. Without using span, make the box with class a take up the first two rows of the grid.
+
+7. Great! Now, feel free to play around with refactoring to see how short you can make your style.css file while not changing the layout we’ve created. When you’re ready, move on to the next lesson. In the next lesson, you will learn some advanced techniques to further style your CSS grids.
+
+
+.grid {
+  border: 2px blue solid;
+  height: 500px;
+  width: 500px;
+  display: grid;
+  grid-template-columns: 25% 25% 2fr 1fr;
+  grid-template-rows: 200px 200px;
+  gap: 10px 15px; 
+}
+
+.box {
+  background-color: beige;
+  color: black;
+  border-radius: 5px;
+  border: 2px dodgerblue solid;
+}
+
+.a {
+  grid-column-start: 1;
+  grid-column-end: span 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
 }
